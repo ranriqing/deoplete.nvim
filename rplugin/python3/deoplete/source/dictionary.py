@@ -7,6 +7,7 @@
 from os.path import getmtime, exists
 from collections import namedtuple
 from .base import Base
+from deoplete.util import parse_file_pattern
 
 DictCacheItem = namedtuple('DictCacheItem', 'mtime candidates')
 
@@ -43,7 +44,7 @@ class Source(Base):
             with open(filename, 'r', errors='replace') as f:
                 self._cache[filename] = DictCacheItem(
                     mtime, [{'word': x} for x in sorted(
-                        (x.strip() for x in f), key=str.lower)]
+                        parse_file_pattern(f, keyword_pattern), key=str.lower)]   
                 )
 
     def _get_dictionaries(self, context):
