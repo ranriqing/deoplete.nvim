@@ -633,7 +633,7 @@ omni							*deoplete-source-omni*
 				setting.
 				(default: {})
 >
-		call deoplete#custom#source('omni', 'functions', {
+		call deoplete#custom#var('omni', 'functions', {
 		    \ 'ruby':  'rubycomplete#Complete',
 		    \ 'javascript': ['tern#Complete', 'jspc#omni']
 		    \})
