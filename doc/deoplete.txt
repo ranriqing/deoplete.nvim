@@ -635,6 +635,7 @@ omni							*deoplete-source-omni*
 >
 		call deoplete#custom#var('omni', 'functions', {
 		    \ 'ruby':  'rubycomplete#Complete',
+		    \ 'python':  'python3complete#Complete',
 		    \ 'javascript': ['tern#Complete', 'jspc#omni']
 		    \})
 <
@@ -653,6 +654,7 @@ omni							*deoplete-source-omni*
 		call deoplete#custom#var('omni', 'input_patterns', {
 		    \ 'ruby': ['[^. *\t]\.\w*', '[a-zA-Z_]\w*::'],
 		    \ 'java': '[^. *\t]\.\w*',
+		    \ 'python': '[^. *\t]\.\w*',
 		    \ 'php': '\w+|[^. \t]->\w*|\w+::\w*',
 		    \})
 <
