@@ -36,6 +36,11 @@ class Source(Base):
         return {'sorted_candidates': candidates}
 
     def _make_cache(self, context):
+        
+        keyword_pattern = self.vim.call(
+            'deoplete#util#get_keyword_pattern',
+            context['filetype'], self.keyword_patterns)
+
         for filename in self._get_dictionaries(context):
             mtime = getmtime(filename)
             if filename in self._cache and self._cache[
